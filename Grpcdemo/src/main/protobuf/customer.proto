@@ -1,0 +1,42 @@
+package demo;
+
+option java_package = "grpc.customerProto";
+option java_outer_classname = "CustomerProtos";
+
+message Customer {
+    required int32 id = 1;
+    required string firstName = 2;
+    required string lastName = 3;
+    required string phoneNumber = 4;
+    required string dob=5;
+    required string fatherName=6;
+    required string motherName=7;
+    required string qualification=8;
+    required string presentAddress=9;
+    required string permanentAddress=10;
+    required string fatherOccupation=11;
+    required string motherOccupation=12;
+    required int32 quantityPurchased=13;
+    required int32 totalBill=14;
+    
+    enum EmailType {
+        PRIVATE = 1;
+        PROFESSIONAL = 2;
+    }
+
+    message EmailAddress {
+        required string email = 1;
+        optional EmailType type = 2 [default = PROFESSIONAL];
+    }
+
+    repeated EmailAddress email = 15;
+}
+
+
+message Customers
+{
+
+   repeated Customer customer = 1;
+
+}
+

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.validation.constraints.NotEmpty;
 
 
 
@@ -24,8 +25,12 @@ public class P7_DashBoardPojo {
   	 private int id; 
      
      
+    
+     
+     
      @Column(name="NAME")
-	 private String n;
+    // @NotEmpty(message = "first name must not be empty")
+	 private String name;
      @Column(name="CODE")
 	 private String 	code;
      @Column(name="IS_PRIMARY")
@@ -48,12 +53,12 @@ public class P7_DashBoardPojo {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getN() {
-		return n;
+	public String getName() {
+		return name;
 	}
-	public void setN(String n) {
-		this.n = n;
-		System.out.println(n);
+	public void setName(String name) {
+		this.name = name;
+		
 	}
 	public String getCode() {
 		return code;
@@ -67,14 +72,14 @@ public class P7_DashBoardPojo {
 	}
 	public void setIs_primary(String is_primary) {
 		this.is_primary = is_primary;
-		System.out.println(is_primary);
+	
 	}
 	public String getUser_id() {
 		return user_id;
 	}
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
-		System.out.println(user_id);
+	
 		
 	}
 	public int getIs_deleted() {
@@ -82,7 +87,7 @@ public class P7_DashBoardPojo {
 	}
 	public void setIs_deleted(int is_deleted) {
 		this.is_deleted = is_deleted;
-		System.out.println(is_deleted);
+		
 	}
 	public Date getCreated_on() {
 		return created_on;
